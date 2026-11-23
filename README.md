@@ -5,6 +5,14 @@
   <p>Building scalable web applications, automation pipelines, and self-hosted server workflows.</p>
 </div>
 
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake-dark.svg" />
+  </picture>
+</div>
+
 ---
 
 ### 🛠️ Tech Stack & Environment
@@ -45,16 +53,4 @@
 
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=santo-git-glitch&label=Profile%20Views&color=1f2937&style=for-the-badge" alt="Profile Views" />
-</div>
-
----
-
-### 🐍 Contribution Snake
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/santo-git-glitch/santo-git-glitch/output/github-contribution-grid-snake-dark.svg" />
-  </picture>
 </div>
