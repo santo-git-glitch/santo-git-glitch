@@ -1,6 +1,7 @@
 <div align="center">
-  <h1>Hi there, I'm Santo 👋</h1>
-  <p><strong>Backend & Automation Developer | Linux & Open-Source Enthusiast</strong></p>
+  <a href="https://github.com/santo-git-glitch">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=1000&color=70A5FD&center=true&vCenter=true&multiline=false&width=650&lines=Hi+there%2C+I'm+Santo+%F0%9F%91%8B;Backend+%26+Automation+Developer;Linux+%26+Open-Source+Enthusiast" alt="Typing SVG" />
+  </a>
   <p>Building scalable web applications, automation pipelines, and self-hosted server workflows.</p>
 </div>
 
