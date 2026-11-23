@@ -6,7 +6,7 @@
   <rect width="850" height="380" rx="14" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
   <path d="M20 50V20h40M830 50V20h-40M20 330v30h40M830 330v30h-40" fill="none" stroke="#00f3ff" stroke-width="2" filter="url(#glow)"/>
   <text x="40" y="45" fill="#00f3ff" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="2">QUANTUM-AI NEURAL CORE // SANTO-GIT-GLITCH</text>
-  <text x="40" y="65" fill="#94a3b8" font-family="monospace" font-size="11">STATE: |ψ⟩ = α|0⟩ + β|1⟩ | θ=28° φ=55° | SYNC: 2026-11-23 20:00 UTC</text>
+  <text x="40" y="65" fill="#94a3b8" font-family="monospace" font-size="11">STATE: |ψ⟩ = α|0⟩ + β|1⟩ | θ=28° φ=55° | SYNC: 2026-11-23 20:01 UTC</text>
   <g transform="translate(425, 200)">
     <circle r="95" fill="none" stroke="#1e293b" stroke-dasharray="4 4"/>
     <ellipse rx="95" ry="32" fill="none" stroke="#00f3ff" stroke-width="1.5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/></ellipse>
