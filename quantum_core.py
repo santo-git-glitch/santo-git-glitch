@@ -1,56 +1,68 @@
 import os, urllib.request, json
-from datetime import datetime
+from datetime import datetime, timezone
 
-USERNAME = "santo-git-glitch"
+USER = "santo-git-glitch"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
-def get_github_data():
-    headers = {"User-Agent": "Quantum-AI-Core"}
-    if TOKEN:
-        headers["Authorization"] = f"token {TOKEN}"
+def fetch_data():
+    h = {"User-Agent": "GearHeart-Quantum-SMC"}
+    if TOKEN: h["Authorization"] = f"token {TOKEN}"
     try:
-        req = urllib.request.Request(f"https://api.github.com/users/{USERNAME}", headers=headers)
-        u = json.loads(urllib.request.urlopen(req, timeout=10).read().decode())
-        req_r = urllib.request.Request(f"https://api.github.com/users/{USERNAME}/repos?per_page=100", headers=headers)
-        r_list = json.loads(urllib.request.urlopen(req_r, timeout=10).read().decode())
-        stars = sum(r.get("stargazers_count", 0) for r in r_list if isinstance(r, dict))
-        forks = sum(r.get("forks_count", 0) for r in r_list if isinstance(r, dict))
-        return {"repos": u.get("public_repos", 1), "followers": u.get("followers", 0), "stars": stars, "forks": forks}
+        u = json.loads(urllib.request.urlopen(urllib.request.Request(f"https://api.github.com/users/{USER}", headers=h), timeout=10).read().decode())
+        rl = json.loads(urllib.request.urlopen(urllib.request.Request(f"https://api.github.com/users/{USER}/repos?per_page=100", headers=h), timeout=10).read().decode())
+        st = sum(r.get("stargazers_count", 0) for r in rl if isinstance(r, dict))
+        fk = sum(r.get("forks_count", 0) for r in rl if isinstance(r, dict))
+        return {"repos": u.get("public_repos", 1), "followers": u.get("followers", 0), "stars": st, "forks": fk}
     except Exception:
-        return {"repos": 12, "followers": 5, "stars": 18, "forks": 4}
-def generate_svg(data):
-    repos, stars, forks, followers = data["repos"], data["stars"], data["forks"], data["followers"]
-    coherence = min(99.99, round(92.5 + (repos * 0.35) + (stars * 0.2), 2))
-    entanglement = (repos * 4) + (stars * 7) + (forks * 3)
-    theta, phi = round((repos * 17) % 180, 1), round((stars * 29 + followers * 13) % 360, 1)
-    ts = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    svg = f'''<svg width="850" height="380" viewBox="0 0 850 380" xmlns="http://www.w3.org/2000/svg">
+        return {"repos": 14, "followers": 8, "stars": 25, "forks": 6}
+def build_matrix(d):
+    rp, st, fk, fl = d["repos"], d["stars"], d["forks"], d["followers"]
+    bio_km = round(1480.5 + (rp * 142.8) + (st * 89.4), 1)
+    smc_load = min(99.99, round(94.2 + (rp * 0.25) + (fk * 0.4), 2))
+    q_ops = (rp * 12) + (st * 19) + (fk * 9)
+    ts = datetime.now(timezone.utc).strftime("%Y.%m.%d // %H:%M UTC")
+    svg = f'''<svg width="900" height="480" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#0d1b2a"/><stop offset="100%" stop-color="#020408"/></radialGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="void" cx="50%" cy="50%" r="75%"><stop offset="0%" stop-color="#0b192c"/><stop offset="65%" stop-color="#040812"/><stop offset="100%" stop-color="#010205"/></radialGradient>
+    <linearGradient id="holo" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00f3ff"/><stop offset="50%" stop-color="#9d00ff"/><stop offset="100%" stop-color="#ffbe0b"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
-  <rect width="850" height="380" rx="14" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
-  <path d="M20 50V20h40M830 50V20h-40M20 330v30h40M830 330v30h-40" fill="none" stroke="#00f3ff" stroke-width="2" filter="url(#glow)"/>
-  <text x="40" y="45" fill="#00f3ff" font-family="monospace" font-size="13" font-weight="bold" letter-spacing="2">QUANTUM-AI NEURAL CORE // {USERNAME.upper()}</text>
-  <text x="40" y="65" fill="#94a3b8" font-family="monospace" font-size="11">STATE: |ψ⟩ = α|0⟩ + β|1⟩ | θ={theta}° φ={phi}° | SYNC: {ts}</text>
-  <g transform="translate(425, 200)">
-    <circle r="95" fill="none" stroke="#1e293b" stroke-dasharray="4 4"/>
-    <ellipse rx="95" ry="32" fill="none" stroke="#00f3ff" stroke-width="1.5"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="14s" repeatCount="indefinite"/></ellipse>
-    <ellipse rx="32" ry="95" fill="none" stroke="#9d00ff" stroke-width="1.5"><animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/></ellipse>
-    <circle r="10" fill="#00f3ff" filter="url(#glow)"><animate attributeName="r" values="8;13;8" dur="3s" repeatCount="indefinite"/></circle>
-    <text x="-8" y="-110" fill="#00f3ff" font-family="monospace" font-size="11">|0⟩</text>
-    <text x="-8" y="120" fill="#9d00ff" font-family="monospace" font-size="11">|1⟩</text>
+  <rect width="900" height="480" rx="16" fill="url(#void)" stroke="#1e293b" stroke-width="2"/>
+  <path d="M15 60V15h55M885 60V15h-55M15 420v45h55M885 420v45h-55" fill="none" stroke="#00f3ff" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="35" y="42" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">HOLOGRAPHIC TRAVELER CONSOLE // SMC-BIO ENGINE v9.8</text>
+  <text x="35" y="62" fill="#94a3b8" font-family="monospace" font-size="11">TRAVELER: {USER.upper()} | DIMENSIONAL SYNC: {ts} | GEAR-HEART: LOCKED</text>
+  <g transform="translate(450, 225)">
+    <circle r="115" fill="none" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <circle r="92" fill="none" stroke="#ffbe0b" stroke-width="3" stroke-dasharray="14 8" opacity="0.75">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="68" fill="none" stroke="#00f3ff" stroke-width="2.5" stroke-dasharray="8 6" opacity="0.85">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse rx="110" ry="34" fill="none" stroke="#9d00ff" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+    <circle r="16" fill="#ff0055" filter="url(#glow)">
+      <animate attributeName="r" values="12;19;12;16;12" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="6" fill="#ffffff"/>
   </g>
-  <rect x="40" y="105" width="190" height="50" rx="6" fill="#0f172a" stroke="#00f3ff"/><text x="52" y="125" fill="#94a3b8" font-family="monospace" font-size="10">QUBIT COHERENCE</text><text x="52" y="145" fill="#00f3ff" font-family="monospace" font-size="16" font-weight="bold">{coherence}%</text>
-  <rect x="40" y="175" width="190" height="50" rx="6" fill="#0f172a" stroke="#9d00ff"/><text x="52" y="195" fill="#94a3b8" font-family="monospace" font-size="10">ENTANGLED NODES</text><text x="52" y="215" fill="#c084fc" font-family="monospace" font-size="16" font-weight="bold">{repos} REPOS</text>
-  <rect x="40" y="245" width="190" height="50" rx="6" fill="#0f172a" stroke="#ffbe0b"/><text x="52" y="265" fill="#94a3b8" font-family="monospace" font-size="10">SYNAPSE WEIGHT</text><text x="52" y="285" fill="#ffbe0b" font-family="monospace" font-size="16" font-weight="bold">{entanglement} Q-OPS</text>
-  <rect x="620" y="105" width="190" height="50" rx="6" fill="#0f172a" stroke="#00f3ff"/><text x="632" y="125" fill="#94a3b8" font-family="monospace" font-size="10">PHOTON STARS</text><text x="632" y="145" fill="#00f3ff" font-family="monospace" font-size="16" font-weight="bold">{stars} ★</text>
-  <rect x="620" y="175" width="190" height="50" rx="6" fill="#0f172a" stroke="#9d00ff"/><text x="632" y="195" fill="#94a3b8" font-family="monospace" font-size="10">QUANTUM FORKS</text><text x="632" y="215" fill="#c084fc" font-family="monospace" font-size="16" font-weight="bold">{forks} BRANCHES</text>
-  <rect x="620" y="245" width="190" height="50" rx="6" fill="#0f172a" stroke="#10b981"/><text x="632" y="265" fill="#94a3b8" font-family="monospace" font-size="10">OBSERVERS</text><text x="632" y="285" fill="#34d399" font-family="monospace" font-size="16" font-weight="bold">{followers} LINKED</text>
-  <text x="40" y="348" fill="#64748b" font-family="monospace" font-size="10">ARCHITECTURE: LINUX // PYTHON // AI-AUTOMATION // ZERO-DECOHERENCE</text>
+  <rect x="35" y="90" width="230" height="58" rx="6" fill="#091322" stroke="#00f3ff"/><text x="48" y="112" fill="#94a3b8" font-family="monospace" font-size="10">MASTER BIO-KILOMETER</text><text x="48" y="135" fill="#00f3ff" font-family="monospace" font-size="18" font-weight="bold">{bio_km} KM/CYC</text>
+  <rect x="35" y="165" width="230" height="58" rx="6" fill="#091322" stroke="#9d00ff"/><text x="48" y="187" fill="#94a3b8" font-family="monospace" font-size="10">SMC ENGINE COHERENCE</text><text x="48" y="210" fill="#c084fc" font-family="monospace" font-size="18" font-weight="bold">{smc_load}% ACTIVE</text>
+  <rect x="35" y="240" width="230" height="58" rx="6" fill="#091322" stroke="#ffbe0b"/><text x="48" y="262" fill="#94a3b8" font-family="monospace" font-size="10">GEAR-HEART TORQUE</text><text x="48" y="285" fill="#ffbe0b" font-family="monospace" font-size="18" font-weight="bold">{q_ops} Q-RPM</text>
+  <rect x="635" y="90" width="230" height="58" rx="6" fill="#091322" stroke="#00f3ff"/><text x="648" y="112" fill="#94a3b8" font-family="monospace" font-size="10">QUANTUM NODES</text><text x="648" y="135" fill="#00f3ff" font-family="monospace" font-size="18" font-weight="bold">{rp} SECTORS</text>
+  <rect x="635" y="165" width="230" height="58" rx="6" fill="#091322" stroke="#ff0055"/><text x="648" y="187" fill="#94a3b8" font-family="monospace" font-size="10">PHOTON RESONANCE</text><text x="648" y="210" fill="#ff4d8d" font-family="monospace" font-size="18" font-weight="bold">{st} STARS ★</text>
+  <rect x="635" y="240" width="230" height="58" rx="6" fill="#091322" stroke="#10b981"/><text x="648" y="262" fill="#94a3b8" font-family="monospace" font-size="10">TIMELINE BRANCHES</text><text x="648" y="285" fill="#34d399" font-family="monospace" font-size="18" font-weight="bold">{fk} FORKS | {fl} LINK</text>
+  <rect x="35" y="365" width="830" height="82" rx="8" fill="#050b14" stroke="#334155"/>
+  <line x1="35" y1="388" x2="865" y2="388" stroke="#1e293b"/>
+  <text x="50" y="381" fill="#ffbe0b" font-family="monospace" font-size="10" font-weight="bold">[HOLOGRAPHIC TRAVELER CONSOLE // LIVE TELEMETRY STREAM]</text>
+  <text x="50" y="407" fill="#00f3ff" font-family="monospace" font-size="11">&gt; [SMC_CORE] Bio-Synthesizer calibrated at {bio_km} km neural span | Zero Decoherence</text>
+  <text x="50" y="424" fill="#c084fc" font-family="monospace" font-size="11">&gt; [GEAR_HEART] Mechanical-Quantum pulse synchronized with {rp} active repositories</text>
+  <text x="50" y="441" fill="#34d399" font-family="monospace" font-size="11">&gt; [NAV_MATRIX] Multiverse trajectory locked // Ready for next code synthesis...</text>
 </svg>'''
     with open("quantum_matrix.svg", "w", encoding="utf-8") as f:
         f.write(svg)
 
 if __name__ == "__main__":
-    generate_svg(get_github_data())
+    build_matrix(fetch_data())
+    print("Gear-Heart & SMC Bio-Engine SVG generated!")
