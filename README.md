@@ -30,11 +30,16 @@
 
 ---
 
-### 📌 Featured Focus
+### 🚀 Featured Projects
 
-- ⚙️ **Automation & CI/CD:** Building automated testing, linting, and deployment workflows with GitHub Actions & Python.
-- 🖥️ **Self-Hosted Infrastructure:** Configuring and maintaining mail archives, wikis, and web servers on Linux.
-- 🌐 **Web & API Integration:** Developing backend services and integrating modern AI/API SDKs.
+<div align="center">
+  <a href="https://github.com/santo-git-glitch/REPO_1">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=santo-git-glitch&repo=REPO_1&theme=tokyonight&hide_border=true" alt="Repo 1" />
+  </a>
+  <a href="https://github.com/santo-git-glitch/REPO_2">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=santo-git-glitch&repo=REPO_2&theme=tokyonight&hide_border=true" alt="Repo 2" />
+  </a>
+</div>
 
 ---
 
