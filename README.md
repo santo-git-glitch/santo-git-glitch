@@ -1,12 +1,12 @@
 <div align="center">
   <h1>Hi there, I'm Santo 👋</h1>
   <p><strong>Backend & Automation Developer | Linux & Open-Source Enthusiast</strong></p>
-  <p>Building web applications, automation scripts, and server workflows from the ground up.</p>
+  <p>Building scalable web applications, automation pipelines, and self-hosted server workflows.</p>
 </div>
 
 ---
 
-### 🛠️ Languages & Tools
+### 🛠️ Tech Stack & Environment
 
 <div align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -14,21 +14,34 @@
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
   <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
 </div>
 
 ---
 
+### 📌 Featured Focus
+
+- ⚙️ **Automation & CI/CD:** Building automated testing, linting, and deployment workflows with GitHub Actions & Python.
+- 🖥️ **Self-Hosted Infrastructure:** Configuring and maintaining mail archives, wikis, and web servers on Linux.
+- 🌐 **Web & API Integration:** Developing backend services and integrating modern AI/API SDKs.
+
+---
+
 ### 📊 GitHub Analytics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=santo-git-glitch&show_icons=true&theme=dark&include_all_commits=true&count_private=true" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=santo-git-glitch&layout=compact&theme=dark" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=santo-git-glitch&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=santo-git-glitch&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</div>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=santo-git-glitch&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
 </div>
 
 <br />
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=santo-git-glitch&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=santo-git-glitch&label=Profile%20Views&color=1f2937&style=for-the-badge" alt="Profile Views" />
 </div>
