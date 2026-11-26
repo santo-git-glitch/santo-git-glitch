@@ -13,3 +13,4 @@ Full-stack web developer & Linux automation enthusiast building lightweight web 
 #### 📊 GitHub Activity
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=santo-git-glitch&show_icons=true&theme=tokyonight&hide_border=true)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=santo-git-glitch&layout=compact&theme=tokyonight&hide_border=true)
+
