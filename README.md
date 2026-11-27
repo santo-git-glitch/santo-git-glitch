@@ -1,3 +1,3 @@
-# Autonomous Node
+# Autonomous Security & Telemetry Node
 
-![Neural Core](core.svg)
+![Quantum Sentinel](quantum.svg)
