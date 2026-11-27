@@ -1,3 +1,3 @@
-# System Node Active
+# Autonomous Node
 
-![Telemetry](telemetry.svg)
+![Neural Core](core.svg)
