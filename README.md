@@ -1,3 +1,3 @@
 # Autonomous Security & Telemetry Node
 
-![Quantum Sentinel](quantum.svg)
+  [Quantum Sentinel](quantum.svg)
